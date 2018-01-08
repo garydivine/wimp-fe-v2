@@ -9,6 +9,7 @@ import { ActorComponent }   from '../actor/actor.component';
 import { ActorFormComponent }   from '../actor-form/actor-form.component';
 
 import { AwardFormComponent }   from '../award-form/award-form.component';
+import { MovieActorFormComponent }   from '../movie-actor-form/movie-actor-form.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: 'actor',  component: ActorComponent },
   { path: 'actor/add',  component: ActorFormComponent },
   { path: 'actor/edit/:id',  component: ActorFormComponent },
-  { path: 'award/add/:actorId',  component: AwardFormComponent }
+  { path: 'award/add/:actorId',  component: AwardFormComponent },
+  { path: 'movieactor/add/:movieId',  component: MovieActorFormComponent }
 ];
 
 @NgModule({

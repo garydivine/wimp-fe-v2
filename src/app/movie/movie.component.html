@@ -18,6 +18,7 @@
         <th>Distributor</th>
         <th>Budget</th>
         <th>Release Date</th>
+        <th>Actor</th>
         <th>Admin</th>
       </tr>
     </thead>
@@ -28,9 +29,11 @@
         <td>{{movie.distributor}}</td>
         <td>{{movie.budget | currency}}</td>
         <td>{{movie.releaseDate | date }}</td>
+        <td><ul><li *ngFor="let actor of movie.actors">{{ actor?.firstName }} {{ actor?.lastName }}</li></ul></td>
         <td class="text-center">
           <a class="btn btn-primary" [routerLink]="['/movie/edit/', movie.id]">Edit</a>&nbsp;
           <button (click)="deleteMovie(movie.id)" class="btn btn-danger">Delete</button>
+          <a class="btn btn-default" [routerLink]="['/movieactor/add/', movie.id]">Add Actor</a>&nbsp;
         </td>
       </tr>
     </tbody>
